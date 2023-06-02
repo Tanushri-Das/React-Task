@@ -172,7 +172,6 @@ const ShowDetails = () => {
                     <Button
                       variant="primary"
                       type="submit"
-                      disabled={!show.schedule.days.length > 0 || !show.schedule.time}
                     >
                       Submit
                     </Button>
