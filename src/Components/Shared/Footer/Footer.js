@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaLinkedin, FaYoutube} from "react-icons/fa";
 import { Container, Row, Col } from 'react-bootstrap';
-import './Footer.css'
+import './Footer.css';
 
 const Footer = () => {
   const date = new Date().getFullYear();
