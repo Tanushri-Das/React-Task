@@ -156,7 +156,7 @@ const ShowDetails = () => {
                   </Form.Group>
                   <Form.Group
                     controlId="formScheduleTime"
-                    className="mt-2 mb-5 mt-sm-5"
+                    className="mt-md-2 mb-5 mt-sm-5"
                   >
                     <Form.Label>Schedule Time</Form.Label>
                     <Form.Control
