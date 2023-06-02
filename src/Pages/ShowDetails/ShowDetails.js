@@ -38,7 +38,6 @@ const ShowDetails = () => {
     }));
   };
 
-  
   const handleBookTicket = () => {
     const { name: movieName, genres, schedule } = show;
     const { days, time } = schedule;
@@ -151,6 +150,8 @@ const ShowDetails = () => {
                       name="scheduleDay"
                       value={formData.scheduleDay}
                       onChange={handleInputChange}
+                      readOnly={!show.schedule.days.length > 0}
+                      placeholder={!show.schedule.days.length > 0 ? "Data not found" : ""}
                     />
                   </Form.Group>
                   <Form.Group
@@ -163,13 +164,15 @@ const ShowDetails = () => {
                       name="scheduleTime"
                       value={formData.scheduleTime}
                       onChange={handleInputChange}
+                      readOnly={!show.schedule.time}
+                      placeholder={!show.schedule.time ? "Data not found" : ""}
                     />
                   </Form.Group>
                   <div className="d-flex justify-content-center">
                     <Button
                       variant="primary"
                       type="submit"
-                      className="text-center"
+                      disabled={!show.schedule.days.length > 0 || !show.schedule.time}
                     >
                       Submit
                     </Button>
