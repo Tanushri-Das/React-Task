@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
@@ -31,24 +30,32 @@ const ShowList = () => {
       ) : (
         <Row>
           {shows.map((show) => (
-            <Col key={show.show.id} lg={3} md={2} sm={1}>
-              <Card className="p-2 mb-3">
+            <Col
+              key={show.show.id}
+              xl={3}
+              lg={4}
+              md={6}
+              sm={12}
+              className="mb-3"
+            >
+              <Card className="p-2">
                 <Card.Img
                   variant="top"
                   style={{
-                    border: "1px solid gainsboro;",
+                    border: "1px solid gainsboro",
                     width: "100%",
-                    height: "450px",
+                    
                   }}
-                  className="rounded"
+                  className="rounded card-img"
                   src={show.show.image?.medium}
                   alt={show.show.name}
                 />
                 <Card.Body className="text-center">
                   <Card.Title className="fs-4">{show.show.name}</Card.Title>
-                  <Card.Text className="fs-5">Language: {show.show.language}</Card.Text>
+                  <Card.Text className="fs-5">
+                    Language: {show.show.language}
+                  </Card.Text>
                   <Link to={`/show/${show.show.id}`}>
-                    {" "}
                     <Button variant="primary">Show Details</Button>
                   </Link>
                 </Card.Body>
