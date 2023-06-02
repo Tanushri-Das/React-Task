@@ -32,7 +32,7 @@ const ShowList = () => {
           {shows.map((show) => (
             <Col
               key={show.show.id}
-              xl={3}
+              
               lg={4}
               md={6}
               sm={12}

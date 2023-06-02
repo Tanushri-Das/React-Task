@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaClock, FaCalendar } from "react-icons/fa";
@@ -74,7 +73,7 @@ const ShowDetails = () => {
         </div>
       </div>
     );
-  }  
+  }
 
   return (
     <div className="details">
@@ -90,17 +89,25 @@ const ShowDetails = () => {
                 <Row className="mb-4 mt-2">
                   <Col sm={6}>
                     <h5>Schedule Time</h5>
-                    <div className="d-flex">
-                      <FaClock className="mt-1 me-1" />
-                      <p>{show.schedule.time}</p>
-                    </div>
+                    {show.schedule.time ? (
+                      <div className="d-flex">
+                        <FaClock className="mt-1 me-1" />
+                        <p>{show.schedule.time}</p>
+                      </div>
+                    ) : (
+                      <p>Data not found</p>
+                    )}
                   </Col>
                   <Col sm={6}>
                     <h5>Schedule Days</h5>
-                    <div className="d-flex">
-                      <FaCalendar className="mt-1 me-1" />
-                      <p>{show.schedule.days.join(", ")}</p>
-                    </div>
+                    {show.schedule.days.length > 0 ? (
+                      <div className="d-flex">
+                        <FaCalendar className="mt-1 me-1" />
+                        <p>{show.schedule.days.join(", ")}</p>
+                      </div>
+                    ) : (
+                      <p>Data not found</p>
+                    )}
                   </Col>
                 </Row>
                 <div className="book-ticket">
@@ -148,7 +155,7 @@ const ShowDetails = () => {
                   </Form.Group>
                   <Form.Group
                     controlId="formScheduleTime"
-                    className="mt-2 mb-5"
+                    className="mt-2 mb-5 mt-sm-5"
                   >
                     <Form.Label>Schedule Time</Form.Label>
                     <Form.Control
