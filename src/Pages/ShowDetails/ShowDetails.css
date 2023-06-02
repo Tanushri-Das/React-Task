@@ -1,0 +1,10 @@
+.details{
+    margin: 100px 0;
+}
+.book-ticket{
+    display: flex;
+    justify-content: center;
+}
+.form-details{
+    resize: none;
+}
